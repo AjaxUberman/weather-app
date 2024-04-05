@@ -51,7 +51,7 @@ const LoginApi = () => {
       <div className="flex flex-col justify-center items-center">
         <h1
           className={`font-bold text-red-500 mb-4 text-4xl ${
-            data.cod === 401 && apiInput !== "" && button === true
+            !data && apiInput !== "" && button === true
               ? "opacity-100"
               : "opacity-0"
           }`}
