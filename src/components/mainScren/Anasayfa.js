@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setItems } from "../../features/counter/counterSlice";
-import { Link } from "react-router-dom";
 import CitiesScreen from "../Cities/CitiesScreen";
 import MapScreen from "../Map/MapScreen";
-import { current } from "@reduxjs/toolkit";
 
 const Anasayfa = () => {
   const [data, setData] = useState([]);
@@ -42,12 +40,12 @@ const Anasayfa = () => {
   const clickHandlerCity = (e) => {
     setCurrentComp(e.target.value);
     setCity(!city);
-    setMap(!map);
+    setMap(map === true ? "" : false);
   };
 
   const clickHandlerMap = (e) => {
     setCurrentComp(e.target.value);
-    setCity(!city);
+    setCity(!city === true ? "" : false);
     setMap(!map);
   };
 

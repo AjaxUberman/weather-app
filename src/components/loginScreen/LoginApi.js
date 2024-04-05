@@ -21,11 +21,22 @@ const LoginApi = () => {
   }, [apiInput, data]);
 
   const fetchData = async () => {
-    const response = await fetch(
-      `https://api.openweathermap.org/geo/1.0/direct?q=London&limit=1&appid=${apiInput}`
-    );
-    const fetchedData = await response.json();
-    setData(fetchedData);
+    if (apiInput !== "") {
+      try {
+        const response = await fetch(
+          `https://api.openweathermap.org/geo/1.0/direct?q=London&limit=1&appid=${apiInput}`
+        );
+        if (!response.ok) {
+          throw new Error("API failed");
+        }
+        const fetchedData = await response.json();
+        setData(fetchedData);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    } else {
+      console.error("API is empty");
+    }
   };
 
   if (shouldRenderAnasayfa) {
