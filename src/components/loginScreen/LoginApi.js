@@ -22,7 +22,7 @@ const LoginApi = () => {
 
   const fetchData = async () => {
     const response = await fetch(
-      `http://api.openweathermap.org/geo/1.0/direct?q=London&limit=1&appid=${apiInput}`
+      `https://api.openweathermap.org/geo/1.0/direct?q=London&limit=1&appid=${apiInput}`
     );
     const fetchedData = await response.json();
     setData(fetchedData);

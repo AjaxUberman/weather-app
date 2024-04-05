@@ -20,7 +20,7 @@ const Anasayfa = () => {
       try {
         if (api) {
           const response = await fetch(
-            `http://api.openweathermap.org/geo/1.0/direct?q=London&limit=1&appid=${api}`
+            `https://api.openweathermap.org/geo/1.0/direct?q=London&limit=1&appid=${api}`
           );
           const fetchedData = await response.json();
           setData(fetchedData);

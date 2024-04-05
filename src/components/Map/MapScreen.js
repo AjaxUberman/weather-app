@@ -19,7 +19,7 @@ const MapScreen = () => {
       try {
         if (api && hoveredRegion) {
           const response = await fetch(
-            `http://api.openweathermap.org/geo/1.0/direct?q=${hoveredRegion.name}&limit=5&appid=${api}`
+            `https://api.openweathermap.org/geo/1.0/direct?q=${hoveredRegion.name}&limit=5&appid=${api}`
           );
           const fetchedData = await response.json();
           setData(fetchedData);
